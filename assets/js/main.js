@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: 'Croissant de Amêndoas',
             description: 'Croissant folhado artesanal recheado com creme de amêndoas e açúcar de confeiteiro.',
             price: 'R$ 9,90',
-            image: 'https://images.unsplash.com/photo-1555507036-ab794f27d2e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'
+            image: './assets/images/products/CroissantAmendoas.jpg'
         }
     ];
     
