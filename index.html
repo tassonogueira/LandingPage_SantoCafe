@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> O Melhor Café de Porto Alegre | Peça no iFood</title>
+    <meta name="description" content="Café especial artesanal em Porto Alegre. Peça agora no iFood ou venha nos visitar! Grãos selecionados, ambiente aconchegante.">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+    <!-- Botões Flutuantes Mobile -->
+    <div class="floating-buttons-mobile">
+        <a href="https://www.ifood.com.br/busca?q=santo+cafe" class="floating-btn ifood-btn" target="_blank">
+            <i class="fas fa-utensils"></i>
+            <span>Pedir iFood</span>
+        </a>
+        <a href="https://wa.me/5551992532196?text=Olá! Gostaria de fazer um pedido" class="floating-btn whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+    </div>
+
+    <!-- Navigation com Controle de Música -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="assets/images/santoCafeLogo.png" alt="Santo Café" height="90">
+                <span></span>
+            </a>
+            <div class="navbar-nav ms-auto align-items-center">
+       
+                </div>
+                <a href="https://www.ifood.com.br/busca?q=santo+cafe" class="btn btn-warning btn-order" target="_blank">
+                    <i class="fas fa-shopping-bag"></i> Pedir no iFood
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Music Control Flutuante -->
+    <div class="music-control" id="musicControl">
+        <i class="fas fa-music"></i>
+        <i class="fas fa-volume-mute" style="display: none;"></i>
+        <audio id="backgroundMusic" loop>
+            <source src="assets/audio/cafe-jazz-instrumental.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bold mb-4">Café que Conquista</h1>
+                    <p class="lead mb-4">O sabor autêntico do café especial agora na palma da sua mão ou no conforto da nossa cafeteria</p>
+                    
+                    <!-- Social Proof Imediata -->
+                    <div class="social-proof-badge mb-4">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>4.8/5 - 247 avaliações</span>
+                    </div>
+                    
+                    <!-- CTAs Principais -->
+                    <div class="cta-container">
+                        <a href="https://www.ifood.com.br/busca?q=santo+cafe" class="btn btn-warning btn-lg cta-primary" target="_blank">
+                            <i class="fas fa-bolt"></i> Pedir no iFood Agora
+                        </a>
+                        <a href="#location" class="btn btn-outline-light btn-lg cta-secondary">
+                            <i class="fas fa-map-marker-alt"></i> Visitar Cafeteria
+                        </a>
+                    </div>
+                    
+                    <!-- Entrega Rápida -->
+                    <div class="delivery-info mt-4">
+                        <i class="fas fa-motorcycle"></i>
+                        <span>Entrega em 30min • Grátis acima de R$ 25</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- Componente: Order Tracker -->
+                    <order-tracker></order-tracker>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Social Proof Section -->
+    <section class="social-proof-section py-5 bg-light">
+        <div class="container">
+            <!-- Componente: Social Proof -->
+            <social-proof></social-proof>
+        </div>
+    </section>
+    
+    <!-- Menu Destacado -->
+    <section id="menu" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Os Favoritos da Casa</h2>
+            <p class="text-center mb-5">Os produtos mais pedidos pelos nossos clientes</p>
+            
+            <div class="row" id="menu-container">
+                <!-- Product cards will be inserted here by JavaScript -->
+            </div>
+            
+            <!-- CTA após menu -->
+            <div class="text-center mt-5">
+                <a href="https://www.ifood.com.br/busca?q=santo+cafe" class="btn btn-warning btn-lg" target="_blank">
+                    <i class="fas fa-utensils"></i> Ver Cardápio Completo no iFood
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Location Section -->
+    <section id="location" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Venha Tomar um Café Conosco</h2>
+                    <p class="mb-4">Ambiente aconchegante e climatizado, Wi-Fi grátis e o melhor café de Porto Alegre</p>
+                    
+                    <!-- Informações de Localização -->
+                    <div class="location-info mb-4">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Endereço</strong>
+                                <p>Rua Luiz de Camões, 337 - Santo Antônio<br>
+                                Porto Alegre - RS, 90670-120<br>
+                                <small>(Dentro do Grêmio Geraldo Santana)</small></p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Horário</strong>
+                                <p>Segunda a Sábado: 9h às 21h<br>
+                                Domingo: Fechado</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Contato</strong>
+                                <p>(51) 99253-2196<br>
+                                contato@santocafe.com.br</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-parking"></i>
+                            <div>
+                                <strong>Estacionamento</strong>
+                                <p>Livre ao público • Grátis para sócios do Geraldo Gremio Santana</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CTAs de Localização -->
+                    <div class="location-ctas">
+                        <a href="https://maps.google.com/?q=Rua Luiz de Camões, 337 - Santo Antônio, Porto Alegre - RS" 
+                           class="btn btn-primary btn-lg me-3" target="_blank">
+                            <i class="fas fa-road"></i> Como Chegar
+                        </a>
+                        <a href="https://wa.me/5551992532196?text=Olá! Gostaria de saber mais sobre a cafeteria" 
+                           class="btn btn-success btn-lg" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- Componente: Location Finder -->
+                    <location-finder></location-finder>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h5><img src="assets/images/santoCafeLogo.png" alt="Santo Café" height="90" class="me-2"></h5>
+                    <p class="mb-0">Santo Café - O melhor café especial de Porto Alegre</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/santo_cafecafeteria" class="text-light me-3" target="_blank">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="https://www.ifood.com.br/busca?q=santo+cafe" class="btn btn-sm btn-warning" target="_blank">
+                            <i class="fas fa-utensils"></i> Pedir no iFood
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Santo Café. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript Customizado -->
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/music-player.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/click-effects.js"></script>
+    <script src="assets/js/scroll-effects.js"></script>
+</body>
+</html>

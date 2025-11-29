@@ -1,0 +1,295 @@
+/* ===== LAYOUT CORRIGIDO - CARDS MAIS LARGOS ===== */
+
+/* Container principal garante o layout flex */
+#menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* PRODUCT CARD - Layout mais largo */
+product-card {
+    display: block;
+    flex: 0 0 calc(33% - 2rem);
+    min-width: 350px;
+    margin-bottom: 2rem;
+}
+
+product-card .card {
+    border: none;
+    transition: all 0.3s ease;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+product-card .card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+product-card .card-img-top {
+    height: 250px;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+product-card .card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+product-card .card-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+product-card .card-title {
+    color: var(--primary-color);
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+product-card .card-text {
+    color: var(--dark-color);
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+product-card .card-footer {
+    background: transparent;
+    border: none;
+    padding: 1.5rem 2rem;
+    margin-top: auto;
+}
+
+/* COMBO COUNTER - Layout mais largo */
+combo-counter {
+    display: block;
+    flex: 0 0 calc(33.333% - 2rem);
+    min-width: 350px;
+    margin-bottom: 2rem;
+}
+
+combo-counter .card {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border-radius: 25px;
+    overflow: hidden;
+    border: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+}
+
+combo-counter .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+combo-counter .card:hover::before {
+    opacity: 1;
+}
+
+combo-counter .card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+combo-counter .card-img-top {
+    height: 250px;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+combo-counter .card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+combo-counter .card-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+    z-index: 2;
+}
+
+combo-counter .card-title {
+    font-weight: 800;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+combo-counter .card-text {
+    opacity: 0.95;
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+combo-counter .pricing {
+    margin-bottom: 2rem;
+}
+
+combo-counter .original-price {
+    text-decoration: line-through;
+    opacity: 0.8;
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+}
+
+combo-counter .current-price {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+combo-counter .progress-container {
+    margin-bottom: 2rem;
+}
+
+combo-counter .progress {
+    height: 15px;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0.8rem;
+}
+
+combo-counter .progress-text {
+    font-size: 1rem;
+    opacity: 0.9;
+    display: flex;
+    justify-content: space-between;
+}
+
+combo-counter .combo-btn {
+    background: white;
+    color: var(--primary-color);
+    border: none;
+    font-weight: 800;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    padding: 1rem 2rem;
+    margin-top: auto;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+combo-counter .combo-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+combo-counter .combo-btn:active {
+    transform: scale(0.95);
+}
+
+combo-counter .combo-btn:disabled {
+    background: #6c757d;
+    color: white;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Resto dos componentes (Order Tracker, Location Finder, Social Proof) permanecem iguais... */
+
+/* ===== LAYOUT RESPONSIVO CORRIGIDO ===== */
+
+/* Desktop Grande */
+@media (min-width: 1400px) {
+    product-card,
+    combo-counter {
+        flex: 0 0 calc(25% - 2rem);
+        min-width: 300px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+    product-card,
+    combo-counter {
+        flex: 0 0 calc(50% - 2rem);
+        min-width: 320px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    product-card,
+    combo-counter {
+        flex: 0 0 100%;
+        min-width: auto;
+        max-width: 450px;
+        margin: 0 auto 2rem auto;
+    }
+    
+    #menu-container {
+        gap: 1.5rem;
+        justify-content: center;
+    }
+    
+    product-card .card:hover,
+    combo-counter .card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .proof-stats {
+        gap: 1rem;
+    }
+    
+    .stat-card {
+        padding: 1.5rem;
+        min-width: 120px;
+    }
+}
+
+/* Mobile pequeno */
+@media (max-width: 576px) {
+    product-card .card,
+    combo-counter .card {
+        margin: 0 1rem 2rem 1rem;
+    }
+    
+    product-card .card-img-top,
+    combo-counter .card-img-top {
+        height: 200px;
+    }
+    
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    product-card .card-body,
+    combo-counter .card-body {
+        padding: 1.5rem;
+    }
+}
